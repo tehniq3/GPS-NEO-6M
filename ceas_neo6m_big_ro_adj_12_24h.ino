@@ -863,6 +863,10 @@ if ((digitalRead(minus) == LOW) and (digitalRead(plus) == LOW))
 if (format12 == 0)
 {
   orele = hour();
+  lcd.setCursor(0,0); // move cursor to column 0 row 0  
+  lcd.print(" ");
+  lcd.setCursor(0,1); // move cursor to column 0 row 1
+  lcd.print(" ");
 }
 else
 {
