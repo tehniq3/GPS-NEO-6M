@@ -781,11 +781,7 @@ if ((digitalRead(minus) == LOW) and (digitalRead(plus) == LOW))
  // Serial.println("-/+");
   format12 = format12 + 1;
   format12 = format12 % 2;
-  delay(250);
-  EEPROM.update(adresa + 1, format12); // store in eeprom
-}
-
-if (format12 == 0)
+ if (format12 == 0)
 {
 lcd.setCursor(0,0); // move cursor to column 0 row 0
 lcd.print("2");
@@ -799,7 +795,9 @@ lcd.print("1");
 lcd.setCursor(0,1); // move cursor to column 0 row 0
 lcd.print("2");  
 }
-
+  delay(250);
+  EEPROM.update(adresa + 1, format12); // store in eeprom
+}
 
 
    
@@ -871,8 +869,9 @@ if (format12 == 0)
 else
 {
   orele = hour()%12;
+  if (orele == 0) orele = 12;
   lcd.setCursor(0,0); // move cursor to column 0 row 0
-  if (hour()%12 == 0) 
+  if (hour()/12 == 0) 
   {   
    lcd.print("A");
   }
