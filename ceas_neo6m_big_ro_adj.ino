@@ -186,6 +186,8 @@ time_offset = (long)timezone*3600;  // convert in seconds
   if (timezone != 0)
   lcd.print(abs(timezone));
   lcd.print(") ");
+  lcd.setCursor(6, 1);
+  lcd.print("ver. 2.0");
   lcd.setCursor(0, 2);
   lcd.print("  sketch by niq_ro  ");
   lcd.setCursor(0, 3);
