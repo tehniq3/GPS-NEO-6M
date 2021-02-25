@@ -781,7 +781,9 @@ if ((digitalRead(minus) == LOW) and (digitalRead(plus) == LOW))
  // Serial.println("-/+");
   format12 = format12 + 1;
   format12 = format12 % 2;
- if (format12 == 0)
+  delay(250);
+  EEPROM.update(adresa + 1, format12); // store in eeprom
+if (format12 == 0)
 {
 lcd.setCursor(0,0); // move cursor to column 0 row 0
 lcd.print("2");
@@ -795,10 +797,7 @@ lcd.print("1");
 lcd.setCursor(0,1); // move cursor to column 0 row 0
 lcd.print("2");  
 }
-  delay(250);
-  EEPROM.update(adresa + 1, format12); // store in eeprom
 }
-
 
    
   while (SoftSerial.available() > 0)
@@ -879,8 +878,26 @@ else
   {
    lcd.print("P");
   }
-  lcd.setCursor(0,1); // move cursor to column 0 row 0
+  lcd.setCursor(0,1); // move cursor to column 0 row 1
   lcd.print("M");
+if (orele == 12)
+{
+if (hour()/12 == 0)
+{
+  lcd.setCursor(0,2); // move cursor to column 0 row 2
+  lcd.print("midnight");
+}
+if (hour()/12 == 1)
+{
+  lcd.setCursor(0,2); // move cursor to column 0 row 2
+  lcd.print("noon    ");
+}
+}
+else
+{
+  lcd.setCursor(0,2); // move cursor to column 0 row 2
+  lcd.print("        ");  
+}
 }
 
 orez = orele / 10;
