@@ -764,6 +764,11 @@ if ((digitalRead(plus) == LOW) and (digitalRead(minus) == HIGH))
  // time_offset = (long)timezone*3600;  // convert in seconds
  time_offset = (float)diferenta[timezone]*3600.;
   EEPROM.update(adresa, timezone); // store in eeprom 
+  lcd.clear();
+  orez0 = orez + 33;
+  oreu0 = oreu + 33;
+  minz0 = minz + 33;
+  minu0 = minu + 33;
 }
 if ((digitalRead(minus) == LOW) and (digitalRead(plus) == HIGH))
 {
@@ -774,6 +779,11 @@ if ((digitalRead(minus) == LOW) and (digitalRead(plus) == HIGH))
 //  time_offset = (long)timezone*3600;  // convert in seconds
 time_offset = (float)diferenta[timezone]*3600.;
   EEPROM.update(adresa, timezone); // store in eeprom
+  lcd.clear();
+  orez0 = orez + 33;
+  oreu0 = oreu + 33;
+  minz0 = minz + 33;
+  minu0 = minu + 33;
 }
 
 lcd.setCursor(11,3); // move cursor to column 14 row 3
@@ -792,6 +802,11 @@ if ((digitalRead(minus) == LOW) and (digitalRead(plus) == LOW))
   format12 = format12 % 2;
   delay(250);
   EEPROM.update(adresa + 1, format12); // store in eeprom
+   lcd.clear();
+  orez0 = orez + 33;
+  oreu0 = oreu + 33;
+  minz0 = minz + 33;
+  minu0 = minu + 33;
 if (format12 == 0)
 {
 lcd.setCursor(0,0); // move cursor to column 0 row 0
@@ -820,6 +835,11 @@ if ((digitalRead(plus) == LOW) and (digitalRead(minus) == HIGH))
 //  time_offset = (long)timezone*3600;  // convert in seconds
 time_offset = (float)diferenta[timezone]*3600.;
   EEPROM.update(adresa, timezone); // store in eeprom 
+   lcd.clear();
+  orez0 = orez + 33;
+  oreu0 = oreu + 33;
+  minz0 = minz + 33;
+  minu0 = minu + 33;
 }
 if ((digitalRead(minus) == LOW) and (digitalRead(plus) == HIGH))
 {
@@ -829,6 +849,11 @@ if ((digitalRead(minus) == LOW) and (digitalRead(plus) == HIGH))
 //  time_offset = (long)timezone*3600;  // convert in seconds
 time_offset = (float)diferenta[timezone]*3600.;
   EEPROM.update(adresa, timezone); // store in eeprom
+   lcd.clear();
+  orez0 = orez + 33;
+  oreu0 = oreu + 33;
+  minz0 = minz + 33;
+  minu0 = minu + 33;
 }
 
 if ((digitalRead(minus) == LOW) and (digitalRead(plus) == LOW))
@@ -838,6 +863,11 @@ if ((digitalRead(minus) == LOW) and (digitalRead(plus) == LOW))
   format12 = format12 % 2;
   delay(250);
   EEPROM.update(adresa + 1, format12); // store in eeprom
+   lcd.clear();
+  orez0 = orez + 33;
+  oreu0 = oreu + 33;
+  minz0 = minz + 33;
+  minu0 = minu + 33;
 }
     
     if (gps.encode(SoftSerial.read()))
