@@ -1042,7 +1042,7 @@ minz0 = minz;
 minu0 = minu;
 secz0 = secz;
 secu0 = secu;
-
+/*
 lcd.setCursor(14,3); // move cursor to column 14 row 3
 if (abs(timezone) < 10)  lcd.print(" ");
 lcd.print("UTC");
@@ -1051,6 +1051,7 @@ if (timezone < 0) lcd.print("-");
 if (timezone != 0)
 lcd.print(abs(timezone));
 else lcd.print("  ");
+*/
       }
     } 
   }
