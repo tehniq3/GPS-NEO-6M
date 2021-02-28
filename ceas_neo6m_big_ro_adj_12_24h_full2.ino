@@ -759,7 +759,7 @@ if (digitalRead(sw1) == LOW)
 {
   // Serial.println("+");
   timezone = timezone + 1;
-  delay(250);
+  //delay(250);
   if (timezone > 37) timezone = 0;
  // time_offset = (long)timezone*3600;  // convert in seconds
  time_offset = (float)diferenta[timezone]*3600.;
